@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "gemini-api-wrapper",
+    "name": "Gemini API Wrapper",
+    "description": "Postman collection for testing the Gemini API wrapper endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["health"]
+        },
+        "description": "Check if the API is running and healthy"
+      }
+    },
+    {
+      "name": "Send Chat Prompt",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"What is FastAPI and why is it useful?\",\n  \"model\": \"gemini-2.5-flash\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/chat",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["chat"]
+        },
+        "description": "Send a prompt to Gemini and get a response"
+      }
+    },
+    {
+      "name": "Send Chat Prompt (Another Example)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"Explain machine learning in simple terms\",\n  \"model\": \"gemini-2.5-flash\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/chat",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["chat"]
+        },
+        "description": "Send another prompt to test the endpoint"
+      }
+    },
+    {
+      "name": "Test Empty Prompt (Should Fail)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"\",\n  \"model\": \"gemini-2.5-flash\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/chat",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["chat"]
+        },
+        "description": "Test error handling - should return 400 error"
+      }
+    },
+    {
+      "name": "Get API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": [""]
+        },
+        "description": "Get API information and available endpoints"
+      }
+    }
+  ]
+}
