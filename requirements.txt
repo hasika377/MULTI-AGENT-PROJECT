@@ -1,3 +1,4 @@
+# Production Dependencies
 fastapi==0.104.1
 uvicorn==0.24.0
 python-dotenv==1.0.0
@@ -8,5 +9,18 @@ requests==2.31.0
 httpx==0.25.2
 PyJWT==2.8.0
 passlib[bcrypt]==1.7.4
+
+# Security & Audit
 bandit==1.7.9
 pip-audit==2.7.3
+
+# Development Dependencies (install with: pip install -r requirements.txt && pip install -e ".[dev]")
+# pytest==7.4.3
+# pytest-cov==4.1.0
+# black==23.12.1
+# flake8==6.1.0
+# isort==5.13.2
+# mypy==1.7.1
+# pylint==3.0.3
+# pre-commit==3.5.0
+# safety==2.3.5
